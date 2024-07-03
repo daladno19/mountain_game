@@ -9,7 +9,6 @@ public class Chunk : MonoBehaviour
     private bool isLoaded = false; 
     private float[,] heightmap;
 
-    // Initialize the chunk (e.g., setting up the mesh, noise parameters, etc.)
     public void Init(int chunkSize, Vector3 position)
     {
         this.chunkSize = chunkSize;
