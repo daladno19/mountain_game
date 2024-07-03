@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class ChunkManager : MonoBehaviour
@@ -7,11 +8,16 @@ public class ChunkManager : MonoBehaviour
     public Transform player; // Reference to the player
     public int chunkSize = 16; // Size of each chunk
     public int viewDistance = 2; // Distance (in chunks) to keep loaded around the player
+    public string savePath = "Chunks"; // Path to save the chunk data
 
     private Dictionary<Vector2Int, Chunk> chunks = new Dictionary<Vector2Int, Chunk>();
 
     void Start()
     {
+        if (!Directory.Exists(savePath))
+        {
+            Directory.CreateDirectory(savePath);
+        }
         UpdateChunks();
     }
 
@@ -44,7 +50,8 @@ public class ChunkManager : MonoBehaviour
 
         foreach (Vector2Int chunkCoord in chunksToUnload)
         {
-            chunks[chunkCoord].Unload();
+            string chunkPath = Path.Combine(savePath, $"{chunkCoord.x}_{chunkCoord.y}.chunk");
+            chunks[chunkCoord].Unload(chunkPath);
             Destroy(chunks[chunkCoord].gameObject);
             chunks.Remove(chunkCoord);
         }
@@ -56,7 +63,8 @@ public class ChunkManager : MonoBehaviour
         Chunk newChunk = Instantiate(chunkPrefab, position, Quaternion.identity);
         newChunk.transform.parent = transform;
         newChunk.Init(chunkSize, position);
-        newChunk.Load();
+        string chunkPath = Path.Combine(savePath, $"{coord.x}_{coord.y}.chunk");
+        newChunk.Load(chunkPath);
         chunks.Add(coord, newChunk);
     }
 }

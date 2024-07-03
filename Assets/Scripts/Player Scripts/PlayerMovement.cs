@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+         float z = Input.GetAxis("Vertical");
 
         Vector3 fwd = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
