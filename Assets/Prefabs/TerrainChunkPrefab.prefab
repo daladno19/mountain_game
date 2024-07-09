@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkSize: 16
+  temperatureScale: 0.25
+  erosionScale: 0.25

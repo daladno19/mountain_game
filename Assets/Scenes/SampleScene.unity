@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 1094550753}
   - component: {fileID: 1094550755}
   - component: {fileID: 1094550756}
+  - component: {fileID: 1094550757}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -375,7 +376,7 @@ CharacterController:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
@@ -409,7 +410,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094550752}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5a1f6c444e0d41cb9beb6cfefc07edf, type: 3}
   m_Name: 
@@ -431,7 +432,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094550752}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47b6e6ee7f5924d1290177ee3e3263a2, type: 3}
   m_Name: 
@@ -441,6 +442,21 @@ MonoBehaviour:
   minZoom: 5
   maxZoom: 20
   cameraTransform: {fileID: 963194228}
+--- !u!114 &1094550757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094550752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30afe9bfdeb1d489bac8f87400b63755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chunkManager: {fileID: 1989424904}
+  player: {fileID: 1094550754}
+  viewDistance: 5
 --- !u!1 &1155186840
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1989424903}
   - component: {fileID: 1989424904}
+  - component: {fileID: 1989424905}
   m_Layer: 0
   m_Name: world
   m_TagString: Untagged
@@ -569,9 +586,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkPrefab: {fileID: 647695588842911962, guid: 0382057c7ece640ad8c347502173c9a4, type: 3}
-  player: {fileID: 1094550754}
   chunkSize: 16
-  viewDistance: 2
+  savePath: Chunks
+--- !u!114 &1989424905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989424902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f396b85932b9b4200aad881e0482c358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 52
+  scale: 1000000
+  chunk: {fileID: 647695588842911962, guid: 0382057c7ece640ad8c347502173c9a4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
