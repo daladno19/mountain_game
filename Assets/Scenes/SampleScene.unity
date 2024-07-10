@@ -456,7 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkManager: {fileID: 1989424904}
   player: {fileID: 1094550754}
-  viewDistance: 5
+  viewDistance: 16
 --- !u!1 &1155186840
 GameObject:
   m_ObjectHideFlags: 0

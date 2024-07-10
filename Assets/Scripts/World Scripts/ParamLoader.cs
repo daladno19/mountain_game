@@ -16,11 +16,14 @@ public class ParamLoader : MonoBehaviour
         float temperatureOffsetY = Random.value * scale;
         float erosionOffsetX = Random.value * scale;
         float erosionOffsetY = Random.value * scale;
+        float heightOffsetX = Random.value * scale;
+        float heightOffsetY = Random.value * scale;
         chunk.setParams(temperatureOffsetX,
                         temperatureOffsetY,
                         erosionOffsetX,
-                        erosionOffsetY
+                        erosionOffsetY,
+                        heightOffsetX,
+                        heightOffsetY
                         );
-
     }
 }
